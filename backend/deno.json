@@ -1,0 +1,26 @@
+{
+	"imports": {
+		"std/": "https://deno.land/std@0.206.0/",
+		"oak": "https://deno.land/x/oak@v12.6.1/mod.ts"
+	},
+	"tasks": {
+		"watch": "deno run --allow-env --allow-net --watch src/index.ts",
+		"start": "deno run --allow-env --allow-net src/index.ts"
+	},
+	"fmt": {
+		"useTabs": true,
+		"lineWidth": 100,
+		"indentWidth": 4,
+		"semiColons": true,
+		"singleQuote": false,
+		"proseWrap": "preserve",
+		"include": [
+			"src/"
+		]
+	},
+	"test": {
+		"include": [
+			"test/"
+		]
+	}
+}
