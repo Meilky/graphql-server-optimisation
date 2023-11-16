@@ -1,7 +1,10 @@
 {
 	"imports": {
 		"std/": "https://deno.land/std@0.206.0/",
-		"oak": "https://deno.land/x/oak@v12.6.1/mod.ts"
+		"oak": "https://deno.land/x/oak@v12.6.1/mod.ts",
+		"graphql-tools": "https://esm.sh/@graphql-tools/schema@10.0.0",
+		"graphql-tag": "https://deno.land/x/graphql_tag@0.1.2/mod.ts",
+		"gql": "https://deno.land/x/gql@2.0.0/mod.ts"
 	},
 	"tasks": {
 		"watch": "deno run --allow-env --allow-net --watch src/index.ts",
