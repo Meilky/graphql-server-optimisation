@@ -1,0 +1,5 @@
+INSERT INTO `RelationshipTypes` (`name`, `description`) VALUES ("Other", "Handle special cases");
+INSERT INTO `RelationshipTypes` (`name`, `description`) VALUES ("Family", "A family relationship is a relationship type that involves people that are related by family.");
+INSERT INTO `RelationshipTypes` (`name`, `description`) VALUES ("Friend", "A friend relationship is a relationship type that involves two or more people sharing a close bond without having any sexual intimacy.");
+INSERT INTO `RelationshipTypes` (`name`, `description`) VALUES ("Casual", "A casual relationship is a relationship dynamic where two people spend time together, sometimes going on dates, but not having the exclusive label of a committed relationship.");
+INSERT INTO `RelationshipTypes` (`name`, `description`) VALUES ("Romantic", "A romantic relationship or romantic love is defined as the mutual and voluntary interaction between two people that is often ignited by expressions of affection and emotional intimacy.");
