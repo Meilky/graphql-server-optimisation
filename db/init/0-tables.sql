@@ -1,5 +1,5 @@
 CREATE TABLE `PersonInfos` (
-	`id` INT NOT NULL AUTO_INCREMENT,
+	`id` INT NOT NULL,
 	`middle_name` VARCHAR(50) DEFAULT NULL,
 	`date_of_birth` DATE DEFAULT NULL,
 
@@ -11,32 +11,30 @@ CREATE TABLE `Persons` (
 	`first_name` VARCHAR(50) NOT NULL,
 	`last_name` VARCHAR(50) NOT NULL,
 
-	`infos` INT DEFAULT NULL,
+	`infos_id` INT DEFAULT NULL,
 
 	PRIMARY KEY (`id`),
 
-	FOREIGN KEY (`infos`) REFERENCES PersonInfos(`id`)
+	FOREIGN KEY (`infos_id`) REFERENCES PersonInfos(`id`)
 );
 
 CREATE TABLE `RelationshipTypes` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`name` VARCHAR(50) NOT NULL,
-	`description` VARCHAR(255) NOT NULL,
+	`name` VARCHAR(20) NOT NULL,
 
-	PRIMARY KEY (`id`)
+	PRIMARY KEY (`name`)
 );
 
 CREATE TABLE `Relationships` (
 	`person_a_id` INT NOT NULL,
 	`person_b_id` INT NOT NULL,
 
-	`relationship_type_id` INT NOT NULL,
+	`relationship_type` VARCHAR(50) NOT NULL DEFAULT "Unknow",
 
-	`description` VARCHAR(255) NOT NULL,
+	`description` VARCHAR(255) DEFAULT NULL,
 
 	PRIMARY KEY (`person_a_id`, `person_b_id`),
 
-	FOREIGN KEY (`relationship_type_id`) REFERENCES RelationshipTypes(`id`),
+	FOREIGN KEY (`relationship_type`) REFERENCES RelationshipTypes(`name`),
 	FOREIGN KEY (`person_a_id`) REFERENCES Persons(`id`),
 	FOREIGN KEY (`person_b_id`) REFERENCES Persons(`id`)
 );
@@ -52,7 +50,7 @@ CREATE TABLE `Events` (
 CREATE TABLE `Notes` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 
-	`text` VARCHAR(255) NOT NULL,
+	`note` VARCHAR(255) NOT NULL,
 	`event_id` INT NOT NULL,
 
 	PRIMARY KEY (`id`),
