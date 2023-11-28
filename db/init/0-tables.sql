@@ -23,7 +23,7 @@ CREATE TABLE `RelationshipTypes` (
 	`name` VARCHAR(50) NOT NULL,
 	`description` VARCHAR(255) NOT NULL,
 
-	PRIMARY KEY (`id`),
+	PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Relationships` (
@@ -52,6 +52,7 @@ CREATE TABLE `Events` (
 CREATE TABLE `Notes` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 
+	`text` VARCHAR(255) NOT NULL,
 	`event_id` INT NOT NULL,
 
 	PRIMARY KEY (`id`),
