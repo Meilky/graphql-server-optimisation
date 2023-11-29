@@ -28,13 +28,13 @@ CREATE TABLE `Relationships` (
 	`person_a_id` INT NOT NULL,
 	`person_b_id` INT NOT NULL,
 
-	`relationship_type` VARCHAR(50) NOT NULL DEFAULT "Unknow",
+	`type` VARCHAR(50) NOT NULL DEFAULT "Unknow",
 
 	`description` VARCHAR(255) DEFAULT NULL,
 
 	PRIMARY KEY (`person_a_id`, `person_b_id`),
 
-	FOREIGN KEY (`relationship_type`) REFERENCES RelationshipTypes(`name`),
+	FOREIGN KEY (`type`) REFERENCES RelationshipTypes(`name`),
 	FOREIGN KEY (`person_a_id`) REFERENCES Persons(`id`),
 	FOREIGN KEY (`person_b_id`) REFERENCES Persons(`id`)
 );

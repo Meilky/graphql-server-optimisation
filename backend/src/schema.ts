@@ -1,10 +1,25 @@
 export const TYPE_DEFS = `
-type Book {
-	title: String
-	author: String
+type PersonInfos {
+	middleName: String
+	dateOfBirth: String
+}
+
+type Person {
+	id: Int!
+	firstName: String!
+	lastName: String!
+	infos: PersonInfos
+
+	relations: [Relation]!
+}
+
+type Relation {
+	type: String!
+	with: Person!
+	description: String
 }
 
 type Query {
-	books: [Book]
+	persons: [Person]!
 }
 `;
