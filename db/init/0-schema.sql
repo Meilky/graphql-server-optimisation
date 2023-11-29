@@ -28,7 +28,7 @@ CREATE TABLE `Relationships` (
 	`person_a_id` INT NOT NULL,
 	`person_b_id` INT NOT NULL,
 
-	`type` VARCHAR(50) NOT NULL DEFAULT "Unknow",
+	`type` VARCHAR(50) NOT NULL DEFAULT "Unknown",
 
 	`description` VARCHAR(255) DEFAULT NULL,
 
@@ -49,7 +49,6 @@ CREATE TABLE `Events` (
 
 CREATE TABLE `Notes` (
 	`id` INT NOT NULL AUTO_INCREMENT,
-
 	`note` VARCHAR(255) NOT NULL,
 	`event_id` INT NOT NULL,
 
