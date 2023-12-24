@@ -11,6 +11,15 @@ type Person {
 	infos: PersonInfos
 
 	relations: [Relation]!
+	events: [Event]!
+}
+
+type Event {
+	id: Int!
+	name: String!
+	date: String!
+
+	persons: [Person]!
 }
 
 type Relation {
@@ -21,5 +30,6 @@ type Relation {
 
 type Query {
 	persons: [Person]!
+	events: [Event]!
 }
 `;
