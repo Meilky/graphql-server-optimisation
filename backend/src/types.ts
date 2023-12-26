@@ -1,9 +1,7 @@
-import type { EventService } from "./services/event";
-import type { PersonService } from "./services/person";
+import type { CharacterService } from "./services/character";
 
 export interface Context {
     services: {
-        person: PersonService;
-        event: EventService;
+        character: CharacterService;
     };
 }

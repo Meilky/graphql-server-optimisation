@@ -6,14 +6,21 @@ import express from "express";
 
 import { TYPE_DEFS } from "./schema";
 import { RESOLVERS } from "./resolvers";
-import { PersonService } from "./services/person";
-import { EventService } from "./services/event";
+import { CharacterService } from "./services/character";
 
 import type { Context } from "./types";
+import { DBConnector } from "./connectors/db";
 
 const APP = express();
 
 const HTTP_SERVER = http.createServer(APP);
+
+const DB_CONNECTOR = new DBConnector(
+    process.env.DB_HOST as string,
+    process.env.DB_USER as string,
+    process.env.DB_PASSWORD as string,
+    process.env.DB_NAME as string
+);
 
 const SERVER = new ApolloServer<Context>({
     typeDefs: TYPE_DEFS,
@@ -30,8 +37,7 @@ APP.use(
         context: async () => {
             return {
                 services: {
-                    person: new PersonService(),
-                    event: new EventService(),
+                    character: new CharacterService(DB_CONNECTOR),
                 },
             };
         },

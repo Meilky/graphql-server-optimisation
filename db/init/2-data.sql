@@ -1,8 +1,3 @@
-INSERT INTO `RelationshipTypes` (`name`) VALUES ("Unknown");
-INSERT INTO `RelationshipTypes` (`name`) VALUES ("Other");
-INSERT INTO `RelationshipTypes` (`name`) VALUES ("Hate");
-INSERT INTO `RelationshipTypes` (`name`) VALUES ("Acquaintance");
-INSERT INTO `RelationshipTypes` (`name`) VALUES ("Friend");
-INSERT INTO `RelationshipTypes` (`name`) VALUES ("Family");
-INSERT INTO `RelationshipTypes` (`name`) VALUES ("Casual");
-INSERT INTO `RelationshipTypes` (`name`) VALUES ("Romantic");
+INSERT INTO Characters (`first_name`, `last_name`) VALUES ("John", "Doe");
+INSERT INTO Characters (`first_name`, `last_name`) VALUES ("Alice", "Doe");
+INSERT INTO Characters (`first_name`, `last_name`) VALUES ("Bob", "Doe");
