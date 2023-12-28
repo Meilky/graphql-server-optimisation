@@ -6,10 +6,13 @@ import express from "express";
 
 import { TYPE_DEFS } from "./schema";
 import { RESOLVERS } from "./resolvers";
+
+import { DBConnector } from "./connectors/db";
+
 import { CharacterService } from "./services/character";
+import { EventService } from "./services/event";
 
 import type { Context } from "./types";
-import { DBConnector } from "./connectors/db";
 
 const APP = express();
 
@@ -38,6 +41,7 @@ APP.use(
             return {
                 services: {
                     character: new CharacterService(DB_CONNECTOR),
+                    event: new EventService(DB_CONNECTOR),
                 },
             };
         },
@@ -46,4 +50,4 @@ APP.use(
 
 await new Promise<void>((resolve) => HTTP_SERVER.listen({ port: 3000 }, resolve));
 
-console.log(`Backend his ready`);
+console.log(`Backend his ready!!!`);

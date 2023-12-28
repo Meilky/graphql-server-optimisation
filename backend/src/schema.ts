@@ -5,7 +5,13 @@ type Character {
 	lastName: String!
 }
 
+type Event {
+	id: Int!
+	description: String!
+}
+
 type Query {
 	characters: [Character]!
+	events: [Event]!
 }
 `;

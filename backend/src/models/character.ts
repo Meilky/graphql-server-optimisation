@@ -1,13 +1,11 @@
 export interface ICharacter {
     id: number;
-
     firstName: string;
     lastName: string;
 }
 
 export class CharacterModel implements ICharacter {
     public id: number;
-
     public firstName: string;
     public lastName: string;
 
@@ -18,7 +16,7 @@ export class CharacterModel implements ICharacter {
     }
 }
 
-interface IDBCharacter {
+export interface IDBCharacter {
     id: number;
     first_name: string;
     last_name: string;

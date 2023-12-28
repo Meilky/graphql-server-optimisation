@@ -1,26 +1,26 @@
-import { createCharacterFromDB } from "../models/character";
+import { createEventFromDB } from "../models/event";
 
 import type { DBConnector } from "../connectors/db";
-import type { ICharacter, IDBCharacter } from "../models/character";
+import type { IDBEvent, IEvent } from "../models/event.ts";
 
-export class CharacterService {
+export class EventService {
     private _connector: DBConnector;
 
     constructor(connector: DBConnector) {
         this._connector = connector;
     }
 
-    public async getCharacters(): Promise<ICharacter[]> {
+    public async getEvents(): Promise<IEvent[]> {
         let conn;
-        let data: ICharacter[] = [];
+        let data: IEvent[] = [];
 
         try {
             conn = await this._connector.getConnection();
 
-            const rows = await conn.query<IDBCharacter[]>("SELECT * FROM Characters;");
+            const rows = await conn.query<IDBEvent[]>("SELECT * FROM Events;");
 
             for (const row of rows) {
-                data.push(createCharacterFromDB(row));
+                data.push(createEventFromDB(row));
             }
         } finally {
             if (conn) conn.release();
